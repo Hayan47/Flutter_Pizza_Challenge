@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final PageController _nameController = PageController();
   final PageController _imageController = PageController(
-    viewportFraction: 0.85,
+    viewportFraction: 0.7,
   );
   final PageController _detailsController = PageController();
   int selectedSized = 1;
@@ -28,10 +28,10 @@ class _HomeScreenState extends State<HomeScreen> {
         });
         _nameController.jumpTo(_imageController.offset *
             45 /
-            (MediaQuery.sizeOf(context).width * 0.85));
+            (MediaQuery.sizeOf(context).width * 0.7));
         _detailsController.jumpTo(_imageController.offset *
             150 /
-            (MediaQuery.sizeOf(context).width * 0.85));
+            (MediaQuery.sizeOf(context).width * 0.7));
       },
     );
   }
@@ -94,37 +94,36 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemBuilder: (context, index) {
                       var scaleFactor = 0.8;
                       var angle =
-                          _currentPage * 90 * (3.1415926535897932 / 180);
+                          _currentPage * 180 * (3.1415926535897932 / 180);
                       Matrix4 matrix4 = Matrix4.identity();
                       var currentScale = 0.0;
                       if (index == _currentPage.floor()) {
                         currentScale =
                             1 - (_currentPage - index) * (1 - scaleFactor);
-                        matrix4 =
-                            Matrix4.diagonal3Values(1.0, currentScale, 1.0);
+                        matrix4 = Matrix4.diagonal3Values(
+                            currentScale, currentScale, 1.0);
                       } else if (index == _currentPage.floor() + 1) {
-                        currentScale = scaleFactor +
+                        var currentScale = scaleFactor +
                             (_currentPage - index + 1) * (1 - scaleFactor);
-                        matrix4 =
-                            Matrix4.diagonal3Values(1.0, currentScale, 1.0);
+                        matrix4 = Matrix4.diagonal3Values(
+                            currentScale, currentScale, 1.0);
                       } else if (index == _currentPage.floor() - 1) {
-                        currentScale =
+                        var currentScale =
                             1 - (_currentPage - index) * (1 - scaleFactor);
-                        matrix4 =
-                            Matrix4.diagonal3Values(1.0, currentScale, 1.0);
+                        matrix4 = Matrix4.diagonal3Values(
+                            currentScale, currentScale, 1.0);
                       } else {
                         currentScale = 0.8;
-                        matrix4 =
-                            Matrix4.diagonal3Values(1.0, currentScale, 1.0);
+                        matrix4 = Matrix4.diagonal3Values(
+                            currentScale, currentScale, 1.0);
                       }
                       return Transform.rotate(
                         angle: angle,
                         child: Transform(
+                          alignment: Alignment.center,
                           transform: matrix4,
                           child: Image.asset(
                             pizzaList[index].image,
-                            width: MediaQuery.of(context).size.width,
-                            height: 310,
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -174,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 //!size
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: const EdgeInsets.only(right: 30, left: 30, top: 10),
                   child: Row(
                     children: [
                       Padding(
@@ -294,8 +293,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       floatingActionButton: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: 40, vertical: MediaQuery.sizeOf(context).height * 0.01),
+        padding: EdgeInsets.only(
+            right: 40, left: 40, top: MediaQuery.sizeOf(context).height * 0.01),
         child: Container(
           width: double.infinity,
           height: 60,
