@@ -1,16 +1,17 @@
-# pizza_challenge
+# Pizza Challenge
 
-A new Flutter project.
+Flutter pizza animation challenge 
 
-## Getting Started
+## Installation
+To run this project locally, follow these steps:
+1. Clone this repository to your local machine using `git clone https://github.com/Hayan47/Task-Manager`.
+2. Navigate to the project directory.
+3. Run `flutter pub get` to install the project dependencies.
+4. Run `flutter run` to build and launch the application on your device or emulator.
 
-This project is a starting point for a Flutter application.
+<img src="[https://github.com/Hayan47/Hayan47/blob/main/nurse1.jpg](https://raw.githubusercontent.com/Hayan47/Hayan47/main/pizza%20app.jpg
+)" width="200" height="400" />
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
