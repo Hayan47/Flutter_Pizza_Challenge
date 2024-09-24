@@ -9,8 +9,8 @@ To run this project locally, follow these steps:
 3. Run `flutter pub get` to install the project dependencies.
 4. Run `flutter run` to build and launch the application on your device or emulator.
 
-<img src="[https://github.com/Hayan47/Hayan47/blob/main/nurse1.jpg](https://raw.githubusercontent.com/Hayan47/Hayan47/main/pizza%20app.jpg
-)" width="200" height="400" />
+![Home Screen](https://raw.githubusercontent.com/Hayan47/Hayan47/main/pizza%20app.jpg)
+
 
 
 
